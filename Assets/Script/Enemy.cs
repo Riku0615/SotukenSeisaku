@@ -14,14 +14,12 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private float lastAttackTime;
 
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);

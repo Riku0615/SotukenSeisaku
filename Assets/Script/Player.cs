@@ -57,11 +57,8 @@ public class Player : MonoBehaviour
 
         Vector3 forward = m_mainCamera.transform.forward;
         Vector3 right = m_mainCamera.transform.right;
-        forward.y = 0f;
-        right.y = 0f;
-        forward.Normalize();
-        right.Normalize();
-
+        forward.y = 0.0f;
+        right.y = 0.0f;
         //移動速度に上記で計算したベクトルを加算する
         PlayerMove = (right * stickL.x + forward * stickL.z).normalized * MoveSpeed * Time.deltaTime;
 
