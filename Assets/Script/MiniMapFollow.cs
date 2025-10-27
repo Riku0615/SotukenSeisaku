@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MiniMapFollow : MonoBehaviour
 {
-    public Transform player; //プレイヤー
-    public float height = 29.95f;  //カメラの高さ
+    public Transform player;        //プレイヤー
+    public Transform mainCamera;    //プレイヤー視点のカメラ
+    public float height = 29.95f;   //カメラの高さ
     public float zOffset = -27.5f;  //Z方向のオフセット
 
     void LateUpdate()
@@ -17,6 +18,6 @@ public class MiniMapFollow : MonoBehaviour
         transform.position = newPos;
 
         //プレイヤーのY回転だけ反映
-        transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        transform.rotation = Quaternion.Euler(90f, mainCamera.eulerAngles.y, 0f);
     }
 }
