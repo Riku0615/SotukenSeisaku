@@ -6493,6 +6493,7 @@ MonoBehaviour:
   detectionRange: 50
   attackRange: 10
   attackCooldown: 10
+  SwordCollider: {fileID: 1556459644}
 --- !u!195 &539275352
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9161,6 +9162,7 @@ MonoBehaviour:
   detectionRange: 30
   attackRange: 10
   attackCooldown: 10
+  SwordCollider: {fileID: 775319889}
 --- !u!195 &760768751
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -15731,6 +15733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a51e34abb844ba5c9e2a180edc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadeCanvas: {fileID: 0}
+  SceneName: 
 --- !u!54 &1357064846
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15921,6 +15925,7 @@ MonoBehaviour:
   detectionRange: 50
   attackRange: 10
   attackCooldown: 10
+  SwordCollider: {fileID: 923891506}
 --- !u!195 &1377698677
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -18327,6 +18332,7 @@ MonoBehaviour:
   detectionRange: 50
   attackRange: 10
   attackCooldown: 10
+  SwordCollider: {fileID: 1198092520}
 --- !u!195 &1512086380
 NavMeshAgent:
   m_ObjectHideFlags: 0

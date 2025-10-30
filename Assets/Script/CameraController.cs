@@ -34,11 +34,11 @@ public class CameraController : MonoBehaviour
         if (m_player == null) return;
         //ã‰º
         float Up_rot = 0.5f;
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Up_rot = RotSpeed;
         }
-        else if(Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             Up_rot = -RotSpeed;
         }
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
 
         //ã‰ºŠp“x§ŒÀ
         m_nowX_Rot += Up_rot;
-        if(m_nowX_Rot>RotUpLimit||m_nowX_Rot<RotDownLimit)
+        if(m_nowX_Rot>RotUpLimit || m_nowX_Rot<RotDownLimit)
         {
             m_nowX_Rot = Mathf.Clamp(m_nowX_Rot, RotDownLimit, RotUpLimit);
             Up_rot = 0.0f;
@@ -58,11 +58,11 @@ public class CameraController : MonoBehaviour
 
         //¶‰E
         float Left_rot;
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             Left_rot = RotSpeed;
         }
-        else if(Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             Left_rot = -RotSpeed;
         }

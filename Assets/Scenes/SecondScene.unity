@@ -7845,7 +7845,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700660797}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1700660800
 Camera:
   m_ObjectHideFlags: 0
@@ -8865,6 +8865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a51e34abb844ba5c9e2a180edc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadeCanvas: {fileID: 0}
+  SceneName: 
 --- !u!54 &1974336024
 Rigidbody:
   m_ObjectHideFlags: 0
