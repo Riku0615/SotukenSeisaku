@@ -2618,7 +2618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316fa09c6ded2de479bfa48fd3268790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 100
+  MoveSpeed: 200
   SwordCollider: {fileID: 1974336022}
 --- !u!136 &550559544
 CapsuleCollider:
