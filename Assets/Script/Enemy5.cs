@@ -5,19 +5,21 @@ using UnityEngine.AI;
 
 public class Enemy5 : MonoBehaviour
 {
-    public Transform player;
-    public float detectionRange = 10.0f;
-    public float attackRange = 2.0f;
-    public float attackCooldown = 2.0f;
+    public Transform player;            //追跡するプレイヤー
+    public float detectionRange = 10.0f;//プレイヤーを見つける範囲
+    public float attackRange = 2.0f;    //攻撃する距離
+    public float attackCooldown = 2.0f; //攻撃間隔
 
     private NavMeshAgent agent;
     private Animator animator;
+    public BoxCollider SpearCollider;
     private float lastAttackTime;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        SpearCollider.enabled = false;
     }
 
     void Update()
@@ -59,5 +61,21 @@ public class Enemy5 : MonoBehaviour
     {
         //追跡を再開する
         agent.enabled = true;
+    }
+
+    void AttackStart()
+    {
+        //当たり判定を有効にする
+        SpearCollider.enabled = true;
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        //当たり判定を無効にする
+        SpearCollider.enabled = false;
+        //デバッグ
+        Debug.Log("攻撃終了");
     }
 }

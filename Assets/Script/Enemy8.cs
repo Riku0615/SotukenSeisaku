@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy6 : MonoBehaviour
+public class Enemy8 : MonoBehaviour
 {
     public Transform player;            //追跡するプレイヤー
     public float detectionRange = 10.0f;//プレイヤーを見つける範囲
@@ -12,21 +12,19 @@ public class Enemy6 : MonoBehaviour
 
     private NavMeshAgent agent;
     private Animator animator;
-    public BoxCollider AxeCollider;
     private float lastAttackTime;
-
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        AxeCollider.enabled = false;
     }
 
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (distance <= detectionRange)
+        if (distance <= detectionRange )
         {
             if (agent.enabled)
             {
@@ -34,7 +32,7 @@ public class Enemy6 : MonoBehaviour
             }
             animator.SetBool("Move", true);//移動アニメーション
 
-            if (distance <= attackRange)
+            if(distance <= attackRange)
             {
                 Attack();
                 lastAttackTime = Time.time;
@@ -42,7 +40,7 @@ public class Enemy6 : MonoBehaviour
         }
         else
         {
-            if (agent.enabled)
+            if(agent.enabled)
             {
                 agent.SetDestination(transform.position);
             }
@@ -61,21 +59,5 @@ public class Enemy6 : MonoBehaviour
     {
         //追跡を再開する
         agent.enabled = true;
-    }
-
-    void AttackStart()
-    {
-        //当たり判定を有効にする
-        AxeCollider.enabled = true;
-        //デバッグ
-        Debug.Log("攻撃開始");
-    }
-
-    void AttackEnd()
-    {
-        //当たり判定を無効にする
-        AxeCollider.enabled = false;
-        //デバッグ
-        Debug.Log("攻撃終了");
     }
 }
