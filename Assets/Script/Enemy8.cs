@@ -12,12 +12,16 @@ public class Enemy8 : MonoBehaviour
 
     private NavMeshAgent agent;
     private Animator animator;
+    public BoxCollider HandColliderL;
+    public BoxCollider HandColliderR;
     private float lastAttackTime;
     
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        HandColliderL.enabled = false;
+        HandColliderR.enabled = false;
     }
 
     void Update()
@@ -59,5 +63,23 @@ public class Enemy8 : MonoBehaviour
     {
         //追跡を再開する
         agent.enabled = true;
+    }
+
+    void AttackStart()
+    {
+        //当たり判定を有効にする
+        HandColliderL.enabled = true;
+        HandColliderR.enabled = true;
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        //当たり判定を無効にする
+        HandColliderL.enabled = false;
+        HandColliderR.enabled = false;
+        //デバッグ
+        Debug.Log("攻撃終了");
     }
 }

@@ -12,12 +12,14 @@ public class Enemy : MonoBehaviour
 
     private NavMeshAgent agent;
     private Animator animator;
+    public BoxCollider CapCollider;
     private float lastAttackTime;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        CapCollider.enabled = false;
     }
 
     void Update()
@@ -59,5 +61,21 @@ public class Enemy : MonoBehaviour
     {
         //追跡を再開する
         agent.enabled = true;
+    }
+
+    void AttackStart()
+    {
+        //当たり判定を有効にする
+        CapCollider.enabled = true;
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        //当たり判定を無効にする
+        CapCollider.enabled = false;
+        //デバッグ
+        Debug.Log("攻撃終了");
     }
 }

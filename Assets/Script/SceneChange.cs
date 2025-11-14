@@ -14,7 +14,7 @@ public class SceneChange : MonoBehaviour
     void Update()
     {
         //スペースキーが押されたらシーンを切り替える
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetButtonDown("Submit"))
         {
             string sceneName = SceneName;
 
