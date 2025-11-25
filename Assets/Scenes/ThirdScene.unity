@@ -2063,13 +2063,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455261437}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 5, z: 100}
+  m_LocalRotation: {x: 0, y: 0.9990483, z: -0.043619405, w: 0}
+  m_LocalPosition: {x: 0, y: 7.5, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 180, z: 0}
 --- !u!114 &455261441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,8 +2085,8 @@ MonoBehaviour:
   RotSpeed: 1
   RotUpLimit: 40
   RotDownLimit: -20
-  CameraRange: 12.5
-  CameraY_Up: 4.95
+  CameraRange: 15.5
+  CameraY_Up: 6.15
 --- !u!1001 &462831755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2817,7 +2817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4086279202973348, guid: c20397bf1592dc040b827e8716b0bd41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 87.5
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 4086279202973348, guid: c20397bf1592dc040b827e8716b0bd41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2927,6 +2927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a51e34abb844ba5c9e2a180edc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   FadeCanvas: {fileID: 0}
   SceneName: 
 --- !u!54 &610153655

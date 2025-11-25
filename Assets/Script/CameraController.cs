@@ -12,9 +12,9 @@ public class CameraController : MonoBehaviour
     //カメラの回転下限
     public float RotDownLimit = -20.0f;
     //プレイヤーとカメラの距離
-    public float CameraRange = 12.5f;
+    public float CameraRange = 15.5f;
     //カメラの高さ
-    public float CameraY_Up = 4.95f;
+    public float CameraY_Up = 6.15f;
 
     private GameObject m_player;
     private float m_nowX_Rot = 0.0f;

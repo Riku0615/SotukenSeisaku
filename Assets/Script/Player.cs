@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    float MoveSpeed = 150.0f;
+    float MoveSpeed = 200.0f;
 
     Rigidbody m_rigidBody;
     Animator m_playerAnimator;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            MoveSpeed = 150.0f;
+            MoveSpeed = 200.0f;
         }
 
         //ˆÚ“®‚³‚¹‚é
