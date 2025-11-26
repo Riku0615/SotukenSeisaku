@@ -35600,6 +35600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 200
   SwordCollider: {fileID: 1867339957}
+  isGuard: 0
 --- !u!65 &1867339957
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35633,7 +35634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a51e34abb844ba5c9e2a180edc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   FadeCanvas: {fileID: 0}
   SceneName: 
 --- !u!54 &1867339959
@@ -35734,9 +35734,10 @@ MonoBehaviour:
   hpSlider: {fileID: 1742494449}
   maxHP: 100
   currentHP: 0
-  invincibleDuration: 3
+  invincibleDuration: 2
+  player: {fileID: 1867339956}
   fadeCanvasPrefab: {fileID: 8969901068818607602, guid: a26c943d645cb4c47ab50e98dab1ce6c, type: 3}
-  nextSceneName: 
+  nextSceneName: GameOver
 --- !u!1001 &1867743936
 PrefabInstance:
   m_ObjectHideFlags: 0

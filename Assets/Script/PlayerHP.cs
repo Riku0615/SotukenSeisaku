@@ -14,7 +14,7 @@ public class PlayerHP : MonoBehaviour
     [Header("無敵時間設定")]
     public float invincibleDuration = 2f;//ダメージ後の無敵時間
     private bool isInvincible = false;
-
+    public Player player;
     private Animator animator;
     private bool isDead = false;
 
@@ -53,13 +53,18 @@ public class PlayerHP : MonoBehaviour
         if (isDead) return;
 
         if(isInvincible) return;
-
+        //防御中ならダメージ軽減し,ダメージアニメーションを再生しない
+        if(player.isGuard)
+        {
+            damage *= 0.5f;
+        }
+        else
+        {
+            //防御してない時だけダメージアニメーション再生
+            animator.SetTrigger("Hit");
+        }
         currentHP -= damage;
         if (currentHP < 0) currentHP = 0;
-
-        //ダメージアニメーション再生
-        animator.SetTrigger("Hit");
-
         UpdateUI();
 
         //HPが0で死亡

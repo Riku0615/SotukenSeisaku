@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public BoxCollider SwordCollider;
 
     bool m_moveFlag;
+    public bool isGuard = false;
 
     //初期配置用変数
     Vector3 initPos = new Vector3(0.0f, 0.0f, 85.0f);
@@ -43,6 +44,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //防御
+        if(Input.GetMouseButton(1))//右クリックでガード
+        {
+            isGuard = true;
+        }
+        else
+        {
+            isGuard = false;
+        }
+        //Animatorへ
+        m_playerAnimator.SetBool("IsGuard", isGuard);
+        //攻撃(防御中は攻撃しない)
+        if(!isGuard&&Input.GetMouseButtonDown(0))
+        {
+            m_playerAnimator.SetTrigger("Attack");
+        }
         //アニメーション
         Animation();
     }
