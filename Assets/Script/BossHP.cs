@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossHP : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class BossHP : MonoBehaviour
 
     private Animator animator;
     private bool isDead = false;
+
+    public GameObject FadeCanvas;
+    public string clearSceneName = "GameClear";
 
     void Start()
     {
@@ -24,15 +28,7 @@ public class BossHP : MonoBehaviour
             hpSlider.minValue = 0;
             hpSlider.maxValue = maxHP;
             hpSlider.value = currentHP;
-            hpSlider.onValueChanged.AddListener(UpdateHPFromSlider);
         }
-        UpdateUI();
-    }
-
-    public void UpdateHPFromSlider(float value)
-    {
-        if (isDead) return;//死亡済みなら変更不可
-        currentHP = value;
         UpdateUI();
     }
 
@@ -51,9 +47,6 @@ public class BossHP : MonoBehaviour
             Die();
             return;
         }
-
-        //ダメージアニメーション再生(生きてる時だけ)
-        animator.SetTrigger("Hit");
     }
 
     //UI更新処理
@@ -74,12 +67,29 @@ public class BossHP : MonoBehaviour
         isDead = true;
         //死亡アニメーション再生
         animator.SetTrigger("Die");
+        //死亡後に消える
         StartCoroutine(DieAfterAnimation());
     }
 
     private IEnumerator DieAfterAnimation()
     {
+        //死亡アニメーションが終わるまで待つ
         yield return new WaitForSeconds(2f);
+
+        // HPバーを非表示に
+        if (hpSlider != null)
+            hpSlider.gameObject.SetActive(false);
+
+        if (hpBar != null)
+            hpBar.gameObject.SetActive(false);
+
+        //フェード開始
+        if(FadeCanvas !=null)
+        {
+            GameObject fade = Instantiate(FadeCanvas);
+            fade.GetComponent<Fade>().FadeStart(clearSceneName);
+        }
+
         Destroy(gameObject);
     }
 }

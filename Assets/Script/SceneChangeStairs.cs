@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;  //シーン遷移に必要
 
@@ -10,18 +11,24 @@ public class SceneChangeStairs : MonoBehaviour
     GameObject FadeCanvas;
     [SerializeField]
     string SceneName;
-    public AudioSource audioSource;
-    public AudioClip stepSound;
+    //階段を上るときの効果音
+    public AudioClip StairsSE;
+    //効果音再生用オブジェクト
+    public GameObject OneShotPrefab;
 
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーかどうかを確認
         if (other.CompareTag("Player"))
         {
+            //階段を上るときの効果音を再生
+            GameObject oneShotObj = Instantiate(OneShotPrefab);
+            oneShotObj.GetComponent<OneShotAudioClip>().PlaySE(StairsSE);
+
             string sceneName = SceneName;
 
             //名前が空白だった場合、現在のシーンの名前を使う
-            if(sceneName =="")
+            if (sceneName =="")
             {
                 sceneName = SceneManager.GetActiveScene().name;
             }
