@@ -17547,6 +17547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FadeCanvas: {fileID: 8969901068818607602, guid: a26c943d645cb4c47ab50e98dab1ce6c, type: 3}
   SceneName: ThirdScene
+  audioSource: {fileID: 0}
+  stepSound: {fileID: 0}
 --- !u!1001 &1028655353
 PrefabInstance:
   m_ObjectHideFlags: 0

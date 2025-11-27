@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;  //シーン遷移に必要
 
@@ -9,11 +10,13 @@ public class SceneChangeStairs : MonoBehaviour
     GameObject FadeCanvas;
     [SerializeField]
     string SceneName;
+    public AudioSource audioSource;
+    public AudioClip stepSound;
 
     private void OnTriggerEnter(Collider other)
     {
         //プレイヤーかどうかを確認
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             string sceneName = SceneName;
 
@@ -26,6 +29,7 @@ public class SceneChangeStairs : MonoBehaviour
             GameObject fadeCanvas = Instantiate(FadeCanvas);
             //FadeSceneを取得してフェードを開始
             fadeCanvas.GetComponent<Fade>().FadeStart(sceneName);
+        
         }
     }
 }

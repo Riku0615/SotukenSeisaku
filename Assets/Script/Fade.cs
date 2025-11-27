@@ -17,6 +17,7 @@ public class Fade : MonoBehaviour
     string m_sceneName;
     //自身が使用するImageを保存
     Image m_image;
+
     //フェード開始
     public void FadeStart(string sceneName)
     {
@@ -42,9 +43,10 @@ public class Fade : MonoBehaviour
         {
             //画面を暗くする
             m_alpha += FadeSpeed * Time.deltaTime;
+            
 
             //完全に暗くなったのでシーンを変更する
-            if(m_alpha >= 1.0f)
+            if (m_alpha >= 1.0f)
             {
                 SceneManager.LoadScene(m_sceneName);
                 //明るくするモードに変更
