@@ -12,12 +12,14 @@ public class Boss : MonoBehaviour
 
     private NavMeshAgent agent;
     private Animator animator;
+    public BoxCollider ToothCollider;
     private float lastAttackTime;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        ToothCollider.enabled = false;
     }
 
     void Update()
@@ -50,13 +52,30 @@ public class Boss : MonoBehaviour
 
     void Attack()
     {
-        agent.isStopped = false;        //追跡を一時停止
+        agent.enabled = false;        //追跡を一時停止
         animator.SetTrigger("Attack");  //攻撃アニメーション
         Invoke(nameof(ResumeChase), 1f);//1秒後に追跡再開
     }
 
     void ResumeChase()
     {
-        agent.isStopped = false;
+        //追跡を再開する
+        agent.enabled = false;
+    }
+
+    void AttackStart()
+    {
+        //当たり判定を有効にする
+        ToothCollider.enabled = true;
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        //当たり判定を無効にする
+        ToothCollider.enabled = false;
+        //デバッグ
+        Debug.Log("攻撃終了");
     }
 }
