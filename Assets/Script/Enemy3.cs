@@ -1,63 +1,96 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy3 : MonoBehaviour
 {
     public Transform player;            //追跡するプレイヤー
     public float detectionRange = 10.0f;//プレイヤーを見つける範囲
     public float attackRange = 2.0f;    //攻撃する距離
+    public float moveSpeed = 5.0f;      //移動速度
+    public float rotateSpeed = 5.0f;    //向きの回転速度
     public float attackCooldown = 2.0f; //攻撃間隔
 
-    private NavMeshAgent agent;
     private Animator animator;
+    public BoxCollider BiteCollider;
     private float lastAttackTime;
+    private bool canMove = true;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        BiteCollider.enabled = false;
     }
 
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if(distance <= detectionRange)
+        if (distance <= detectionRange)
         {
-            if(agent.enabled)
+            if (distance > attackRange)
             {
-                agent.SetDestination(player.position);
+                if (canMove)
+                {
+                    MoveToPlayer(); //プレイヤーへ向かって飛ぶ
+                }
             }
-            animator.SetBool("Move", true);//移動アニメーション
-
-            if(distance <= attackRange)
+            else
             {
-                Attack();
-                lastAttackTime = Time.time;
+                TryAttack();    //攻撃を試みる
             }
         }
         else
         {
-            if(agent.enabled)
-            {
-                agent.SetDestination(transform.position);
-            }
-            animator.SetBool("Move", false);//待機アニメーション
+            animator.SetBool("Move", false);
         }
     }
 
-    void Attack()
+    void MoveToPlayer()
     {
-        agent.enabled = false;//追跡を一時停止
-        animator.SetTrigger("Attack");//攻撃アニメーション
-        Invoke(nameof(ResumeChase), 1.0f);//1秒後に追跡再開
+        animator.SetBool("Move", true);
+
+        //プレイヤー方向
+        Vector3 dir = (player.position - transform.position).normalized;
+
+        //向きを滑らかに回す
+        Quaternion targetRot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * rotateSpeed);
+
+        //前方向へ移動
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
-    void ResumeChase()
+    void TryAttack()
     {
-        //追跡を再開する
-        agent.enabled = true;
+        if (Time.time - lastAttackTime > attackCooldown)
+        {
+            StartCoroutine(AttackSequence());
+            lastAttackTime = Time.time;
+        }
+    }
+
+    IEnumerator AttackSequence()
+    {
+        canMove = false;                    //移動停止
+        animator.SetTrigger("Attack");      //攻撃アニメーション再生
+        yield return new WaitForSeconds(1f);//攻撃時間分待機
+        canMove = true;                     //移動再開
+    }
+
+    void AttackStart()
+    {
+        //当たり判定を有効にする
+        BiteCollider.enabled = true;
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        //当たり判定を無効にする
+        BiteCollider.enabled = false;
+        //デバッグ
+        Debug.Log("攻撃終了");
     }
 }
