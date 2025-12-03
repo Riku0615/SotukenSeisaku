@@ -11126,6 +11126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 200
+  WalkSE: {fileID: 8300000, guid: ff1ad31531fffda4cbf0f2df4dc31783, type: 3}
+  AttackSE: {fileID: 8300000, guid: 3b0a49e9e4ebb2d43bbd0b10a1a6dc78, type: 3}
+  GuardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
   SwordCollider: {fileID: 1974336022}
   isGuard: 0
 --- !u!136 &550559544
@@ -35047,6 +35050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b086a51e34abb844ba5c9e2a180edc2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackType: 0
 --- !u!54 &1974336024
 Rigidbody:
   m_ObjectHideFlags: 0

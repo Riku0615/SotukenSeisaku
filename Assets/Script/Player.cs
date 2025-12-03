@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     float MoveSpeed = 200.0f;
 
+    [SerializeField]
+    AudioClip WalkSE, AttackSE, GuardSE;
+
     Rigidbody m_rigidBody;
     Animator m_playerAnimator;
     GameObject m_mainCamera;
@@ -17,6 +20,9 @@ public class Player : MonoBehaviour
 
     bool m_moveFlag;
     public bool isGuard = false;
+
+    //攻撃中かどうか
+    bool isAttacking = false;
 
     //初期配置用変数
     Vector3 initPos = new Vector3(0.0f, 0.0f, 85.0f);
@@ -48,17 +54,23 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButton(1))//右クリックでガード
         {
             isGuard = true;
+            //効果音
+            GameManager.PlaySE(GuardSE);
         }
         else
         {
             isGuard = false;
         }
-        //Animatorへ
         m_playerAnimator.SetBool("IsGuard", isGuard);
         //攻撃(防御中は攻撃しない)
         if(!isGuard&&Input.GetMouseButtonDown(0))
         {
-            m_playerAnimator.SetTrigger("Attack");
+            PlayAttack1();
+        }
+        //攻撃2
+        if(!isGuard && Input.GetKeyDown(KeyCode.F))
+        {
+            PlayAttack2();
         }
         //アニメーション
         Animation();
@@ -104,18 +116,29 @@ public class Player : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(PlayerMove.normalized);
         }
+    }
 
-        //左クリックが押されたら攻撃アニメーションを再生
-        if(Input.GetMouseButtonDown(0))
-        {
-            m_playerAnimator.SetTrigger("Attack");
-        }
+    void PlayAttack1()
+    {
+        if (isAttacking) return;
+
+        isAttacking = true;
+        m_playerAnimator.SetTrigger("Attack");
+    }
+
+    void PlayAttack2()
+    {
+        if (isAttacking) return;
+
+        isAttacking = true;
+        m_playerAnimator.SetTrigger("Attack2");
     }
 
     private void Animation()
     {
         //移動フラグ
         m_playerAnimator.SetBool("MoveFlag", m_moveFlag);
+        GameManager.PlaySE(WalkSE);
     }
 
     //攻撃開始
@@ -123,6 +146,7 @@ public class Player : MonoBehaviour
     {
         //当たり判定を有効にする
         SwordCollider.enabled = true;
+        GameManager.PlaySE(AttackSE);
         //デバッグ
         Debug.Log("攻撃開始");
     }
@@ -134,5 +158,11 @@ public class Player : MonoBehaviour
         SwordCollider.enabled = false;
         //デバッグ
         Debug.Log("攻撃終了");
+    }
+
+    //攻撃モーションの最後で呼ぶ
+    void AttackFinish()
+    {
+        isAttacking = false;
     }
 }

@@ -15,6 +15,9 @@ public class Enemy2 : MonoBehaviour
     public BoxCollider SwordCollider;
     private float lastAttackTime;
 
+    //攻撃中かどうか
+    bool isAttacking = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -65,8 +68,10 @@ public class Enemy2 : MonoBehaviour
 
     void AttackStart()
     {
+        if (isAttacking) return;
         //当たり判定を有効にする
         SwordCollider.enabled = true;
+        isAttacking = true;
         //デバッグ
         Debug.Log("攻撃開始");
     }
@@ -77,5 +82,12 @@ public class Enemy2 : MonoBehaviour
         SwordCollider.enabled = false;
         //デバッグ
         Debug.Log("攻撃終了");
+    }
+
+
+    //攻撃モーションの最後で呼ぶ
+    void AttackFinish()
+    {
+        isAttacking = false;
     }
 }
