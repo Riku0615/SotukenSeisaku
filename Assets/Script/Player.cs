@@ -9,7 +9,10 @@ public class Player : MonoBehaviour
     float MoveSpeed = 200.0f;
 
     [SerializeField]
-    AudioClip WalkSE, AttackSE, GuardSE;
+    AudioClip AttackSE, GuardSE;
+
+    [SerializeField]
+    AudioSource walkAudioSource;
 
     Rigidbody m_rigidBody;
     Animator m_playerAnimator;
@@ -26,6 +29,7 @@ public class Player : MonoBehaviour
 
     //初期配置用変数
     Vector3 initPos = new Vector3(0.0f, 0.0f, 85.0f);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,9 @@ public class Player : MonoBehaviour
         m_playerAnimator = GetComponent<Animator>();
         //剣の当たり判定を無効にする
         SwordCollider.enabled = false;
+        //歩きSE用AudioSourceを取得
+        if (walkAudioSource == null)
+            walkAudioSource = GetComponent<AudioSource>();
         //メインカメラのゲームオブジェクトを取得する
         m_mainCamera = Camera.main.gameObject;
     }
@@ -111,6 +118,22 @@ public class Player : MonoBehaviour
         bool isMoving = PlayerMove.sqrMagnitude > 0.0f;
         m_moveFlag = isMoving;
 
+        //歩きSEのループ制御
+        if(isMoving && !isGuard)
+        {
+            if(!walkAudioSource.isPlaying)
+            {
+                walkAudioSource.Play(); //ループ開始
+            }
+        }
+        else
+        {
+            if(walkAudioSource.isPlaying)
+            {
+                walkAudioSource.Stop(); //停止
+            }
+        }
+
         //回転
         if (isMoving)
         {
@@ -138,7 +161,6 @@ public class Player : MonoBehaviour
     {
         //移動フラグ
         m_playerAnimator.SetBool("MoveFlag", m_moveFlag);
-        GameManager.PlaySE(WalkSE);
     }
 
     //攻撃開始
