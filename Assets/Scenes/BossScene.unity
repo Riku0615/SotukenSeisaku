@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 559322873}
   detectionRange: 100
-  attackRange: 20
+  attackRange: 50
   attackCooldown: 100
   ToothCollider: {fileID: 1674194309}
 --- !u!114 &414931060
