@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //防御
-        if(Input.GetMouseButton(1)||Input.GetKey(KeyCode.JoystickButton4))//右クリックでガード
+        if(Input.GetMouseButton(1)||Input.GetKey(KeyCode.JoystickButton5))//右クリックでガード
         {
             isGuard = true;
             //効果音
@@ -100,7 +100,7 @@ public class Player : MonoBehaviour
 
         float runSpeed = 300.0f;
         //シフトキーが押されたらダッシュする
-        if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.JoystickButton5))
+        if(Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.JoystickButton1))
         {
             MoveSpeed = runSpeed;
             m_playerAnimator.SetTrigger("Run");

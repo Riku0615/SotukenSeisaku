@@ -28,51 +28,40 @@ public class CameraController : MonoBehaviour
         m_nowX_Rot = transform.localEulerAngles.x;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         if (m_player == null) return;
-        //上下
-        float Up_rot = 0.5f;
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Up_rot = RotSpeed;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            Up_rot = -RotSpeed;
-        }
-        else
-        {
-            Up_rot = 0.0f;
-        }
 
-        //上下角度制限
+        // 右スティック入力（軸名はInputManagerで設定）
+        float stickX = Input.GetAxis("RightStickHorizontal"); // 左右
+        float stickY = Input.GetAxis("RightStickVertical");   // 上下
+
+        //キーボード入力
+        float keyX = 0f;
+        float keyY = 0f;
+
+        if (Input.GetKey(KeyCode.LeftArrow)) keyX = -1f;
+        if (Input.GetKey(KeyCode.RightArrow)) keyX = 1f;
+        if (Input.GetKey(KeyCode.UpArrow)) keyY = 1f;
+        if (Input.GetKey(KeyCode.DownArrow)) keyY = -1f;
+
+        //入力合流(スティック + キーボード)
+        float inputX = stickX + keyX;//左右
+        float inputY = stickY + keyY;//上下
+
+        // 上下回転
+        float Up_rot = -inputY * RotSpeed;
         m_nowX_Rot += Up_rot;
-        if(m_nowX_Rot>RotUpLimit || m_nowX_Rot<RotDownLimit)
-        {
-            m_nowX_Rot = Mathf.Clamp(m_nowX_Rot, RotDownLimit, RotUpLimit);
-            Up_rot = 0.0f;
-        }
-        transform.RotateAround(m_player.transform.position, this.transform.right, Up_rot);
 
-        //左右
-        float Left_rot;
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            Left_rot = RotSpeed;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            Left_rot = -RotSpeed;
-        }
-        else
-        {
-            Left_rot = 0.0f;
-        }
+        m_nowX_Rot = Mathf.Clamp(m_nowX_Rot, RotDownLimit, RotUpLimit);
+
+        transform.rotation = Quaternion.Euler(m_nowX_Rot, transform.eulerAngles.y, 0f);
+
+        // 左右回転
+        float Left_rot = inputX * RotSpeed;
         transform.RotateAround(m_player.transform.position, Vector3.up, Left_rot);
 
-        //カメラ位置をプレイヤーの後ろに固定
+        // カメラをプレイヤー後方に固定
         Vector3 cameraOffset = -transform.forward * CameraRange + Vector3.up * CameraY_Up;
         transform.position = m_player.transform.position + cameraOffset;
     }
