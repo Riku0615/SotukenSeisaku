@@ -9,20 +9,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 02536344d6bdb9e4baac38e3f7fa71b3
   - enabled: 1
+    path: Assets/Scenes/FirstFloor.unity
+    guid: cdf6eb8b475a86d4e830f3e381baeef7
+  - enabled: 1
     path: Assets/Scenes/FirstScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 440cfec0105e0334cb13c30bbde2cbeb
   - enabled: 1
+    path: Assets/Scenes/SecondFloor.unity
+    guid: dc5a906a2cf2d4947baa21d6401b5302
+  - enabled: 1
     path: Assets/Scenes/SecondScene.unity
     guid: c72f3c933adfc8a4a814a45e2cac9fe9
+  - enabled: 1
+    path: Assets/Scenes/ThirdFloor.unity
+    guid: b2a612ec00d78b947bf92663366816ef
   - enabled: 1
     path: Assets/Scenes/ThirdScene.unity
     guid: 59ee0dacfbac8e14190aaf4910933108
   - enabled: 1
+    path: Assets/Scenes/FourFloor.unity
+    guid: adab507f43b50af4d83a8621d9741c3c
+  - enabled: 1
     path: Assets/Scenes/FourScene.unity
     guid: 20ef10e89ef823746ac62fc830bb0f20
+  - enabled: 1
+    path: Assets/Scenes/BossFloor.unity
+    guid: 9b3cb0c6146228946a4a5c448d3e6f36
   - enabled: 1
     path: Assets/Scenes/BossScene.unity
     guid: 4d8dded68e89da34a8cac7d57e217e23

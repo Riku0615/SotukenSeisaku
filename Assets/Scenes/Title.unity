@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeCanvas: {fileID: 8969901068818607602, guid: a26c943d645cb4c47ab50e98dab1ce6c, type: 3}
-  SceneName: FirstScene
+  SceneName: FirstFloor
 --- !u!82 &283151709
 AudioSource:
   m_ObjectHideFlags: 0
