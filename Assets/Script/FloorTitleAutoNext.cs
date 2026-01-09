@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class FloorTitleAutoNext : MonoBehaviour
+{
+    [SerializeField]
+    float waitTime = 2.0f;  //ï\é¶éûä‘(ïb)
+
+    [SerializeField]
+    GameObject FadeCanvas;
+
+    [SerializeField]
+    string nextSceneName;   //éüÇÃäKëwÉVÅ[Éìñº
+
+    void Start()
+    {
+        StartCoroutine(GoNext());
+    }
+
+    IEnumerator GoNext()
+    {
+        yield return new WaitForSeconds(waitTime);
+        GameObject fade = Instantiate(FadeCanvas);
+        fade.GetComponent<Fade>().FadeStart(nextSceneName);
+    }
+}

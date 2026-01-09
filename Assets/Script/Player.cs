@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     //剣の当たり判定
     public BoxCollider SwordCollider;
 
+    public Attack swordAttack;
+
     bool m_moveFlag;
     public bool isGuard = false;
 
@@ -146,6 +148,10 @@ public class Player : MonoBehaviour
         if (isAttacking) return;
 
         isAttacking = true;
+
+        //攻撃タイプを1に切り替える
+        swordAttack.attackType = Attack.AttackType.Attack1;
+
         m_playerAnimator.SetTrigger("Attack");
     }
 
@@ -154,6 +160,10 @@ public class Player : MonoBehaviour
         if (isAttacking) return;
 
         isAttacking = true;
+
+        //攻撃タイプを2に切り替える
+        swordAttack.attackType = Attack.AttackType.Attack2;
+
         m_playerAnimator.SetTrigger("Attack2");
     }
 
@@ -166,11 +176,11 @@ public class Player : MonoBehaviour
     //攻撃開始
     void AttackStart()
     {
-        //当たり判定を有効にする
-        SwordCollider.enabled = true;
-        GameManager.PlaySE(AttackSE);
-        //デバッグ
-        Debug.Log("攻撃開始");
+       //当たり判定を有効にする
+       SwordCollider.enabled = true;
+       GameManager.PlaySE(AttackSE);
+       //デバッグ
+       Debug.Log("攻撃開始");
     }
 
     //攻撃終了

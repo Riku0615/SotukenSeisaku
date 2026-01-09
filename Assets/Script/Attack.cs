@@ -7,18 +7,26 @@ public class Attack : MonoBehaviour
     public enum AttackType { Attack1, Attack2 }
     public AttackType attackType;   //攻撃タイプ
 
+    [Header("Hit Effects")]
+    [SerializeField]
+    ParticleSystem attack1HitEffect;   //通常攻撃
+
+    [SerializeField]
+    ParticleSystem attack2HitEffect;    //攻撃2専用
+
     private void OnTriggerEnter(Collider other)
     {
         float damage = 0;
         
-        //攻撃タイプでダメージを変える
-        if(attackType == AttackType.Attack1)
+       switch (attackType)
         {
-            damage = Random.Range(1f, 5f);  //攻撃1
-        }
-        else if(attackType==AttackType.Attack2)
-        {
-            damage = Random.Range(10f, 20f); //攻撃2
+            case AttackType.Attack1:
+                damage = Random.Range(1f, 5f);
+                break;
+
+            case AttackType.Attack2:
+                damage = Random.Range(1f, 5f);
+                break;
         }
 
         //触れたオブジェクトのタグがEnemyなら
@@ -26,14 +34,39 @@ public class Attack : MonoBehaviour
         {
             //EnemyHPを持っているか確認
             EnemyHP enemyHP = other.GetComponent<EnemyHP>();
-            if (enemyHP != null)enemyHP.TakeDamage(damage);
+            if (enemyHP != null)
+            {
+                enemyHP.TakeDamage(damage);
+                PlayHitEffect(other);
+            }
         }
         //触れたオブジェクトのタグがBossなら
         if(other.CompareTag("Boss"))
         {
             //BossHPを持っているか確認
             BossHP bossHP = other.GetComponent<BossHP>();
-            if (bossHP != null)bossHP.TakeDamage(damage);
+            if (bossHP != null)
+            {
+                bossHP.TakeDamage(damage);
+                PlayHitEffect(other);
+            }
+        }
+    }
+
+    void PlayHitEffect(Collider target)
+    {
+        //ヒット位置にエフェクト表示
+        Vector3 hitPos = target.ClosestPoint(transform.position);
+
+        if(attackType == AttackType.Attack2 && attack2HitEffect != null)
+        {
+            attack2HitEffect.transform.position = hitPos;
+            attack2HitEffect.Play();
+        }
+        else if(attack1HitEffect !=null)
+        {
+            attack1HitEffect.transform.position = hitPos;
+            attack1HitEffect.Play();
         }
     }
 }
