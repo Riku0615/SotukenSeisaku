@@ -36,6 +36,8 @@ public class EnemyAttack : MonoBehaviour
 
         Vector3 hitPos = target.ClosestPoint(transform.position);
         hitEffect.transform.position = hitPos;
+
+        hitEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         hitEffect.Play();
     }
 
