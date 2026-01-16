@@ -2328,6 +2328,22 @@ MonoBehaviour:
   currentHP: 0
   FadeCanvas: {fileID: 8969901068818607602, guid: a26c943d645cb4c47ab50e98dab1ce6c, type: 3}
   clearSceneName: GameClear
+--- !u!114 &414931061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414931053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ef267750988b24db39c8e24b58ffed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 559322873}
+  closeAttackDistance: 3
+  breathAttackDistance: 6
+  attackCooldown: 2
 --- !u!1001 &520959291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7138,6 +7154,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1494583877365688, guid: 8431058aa84a65044bbe46298ab86574, type: 3}
       insertIndex: -1
       addedObject: {fileID: 414931060}
+    - targetCorrespondingSourceObject: {fileID: 1494583877365688, guid: 8431058aa84a65044bbe46298ab86574, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 414931061}
     - targetCorrespondingSourceObject: {fileID: 1370506567614396, guid: 8431058aa84a65044bbe46298ab86574, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1674194310}
