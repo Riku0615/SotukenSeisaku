@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
+    [Header("Damage")]
     public float damage = 10f;      //与えるダメージ
+
+    [Header("Hit Effect")]
+    [SerializeField]
+    ParticleSystem hitEffect;   //ヒット時エフェクト
+
     private bool canDamage = true;  //攻撃可能かどうか(アニメーションで切り替える...)
 
     //ボスが何かに接触した瞬間呼ばれる
@@ -19,8 +25,20 @@ public class BossAttack : MonoBehaviour
             if(hp !=null)
             {
                 hp.TakeDamage(damage);
+                PlayHitEffect(other);
             }
         }
+    }
+
+    void PlayHitEffect(Collider target)
+    {
+        if (hitEffect == null) return;
+
+        Vector3 hitPos = target.ClosestPoint(transform.position);
+        hitEffect.transform.position = hitPos;
+
+        hitEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        hitEffect.Play();
     }
 
     //アニメーションイベントから呼び出す

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class EnemyHP : MonoBehaviour
@@ -11,12 +12,20 @@ public class EnemyHP : MonoBehaviour
     public float currentHP;
 
     private Animator animator;
+    private Rigidbody rb;
+    private Collider col;
+    private NavMeshAgent agent;
+
     private bool isDead = false;
 
     void Start()
     {
         currentHP = maxHP;
+
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<Collider>();
+        agent = GetComponent<NavMeshAgent>();
 
         //スライダーの初期設定
         if(hpSlider != null)
@@ -69,11 +78,47 @@ public class EnemyHP : MonoBehaviour
     //死亡処理
     private void Die()
     {
-        Debug.Log("Die()が呼ばれた！");
         if (isDead) return;
         isDead = true;
+
+        Debug.Log("敵が死亡 (NavMeshAgent 停止)");
+
+        // ===== NavMeshAgent停止 =====
+        if (agent != null && agent.isOnNavMesh && agent.enabled)
+        {
+            agent.isStopped = true;
+            agent.ResetPath();
+            agent.enabled = false;
+        }
+
+        //Rigidbody停止
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
+        }
+
+        //当たり判定オフ
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
         //死亡アニメーション再生
-        animator.SetTrigger("Die");
+        if (animator != null)
+        { 
+            animator.SetTrigger("Die");
+        }
+
+        //他スクリプト停止(AI・攻撃など)
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+        foreach(MonoBehaviour script in scripts)
+        {
+            if (script != this)
+                script.enabled = false;
+        }
+
         StartCoroutine(DieAfterAnimation());
     }
 
