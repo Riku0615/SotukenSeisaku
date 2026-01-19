@@ -14,6 +14,10 @@ public class Attack : MonoBehaviour
     [SerializeField]
     ParticleSystem attack2HitEffect;    //攻撃2専用
 
+    [Header("Hit Sound")]
+    [SerializeField]
+    AudioClip hitSE;    //ヒット時SE
+
     private void OnTriggerEnter(Collider other)
     {
         float damage = 0;
@@ -38,6 +42,7 @@ public class Attack : MonoBehaviour
             {
                 enemyHP.TakeDamage(damage);
                 PlayHitEffect(other);
+                PlayHitSE();
             }
         }
         //触れたオブジェクトのタグがBossなら
@@ -49,6 +54,7 @@ public class Attack : MonoBehaviour
             {
                 bossHP.TakeDamage(damage);
                 PlayHitEffect(other);
+                PlayHitSE();
             }
         }
     }
@@ -67,6 +73,14 @@ public class Attack : MonoBehaviour
         {
             attack1HitEffect.transform.position = hitPos;
             attack1HitEffect.Play();
+        }
+    }
+
+    void PlayHitSE()
+    {
+        if(hitSE != null)
+        {
+            GameManager.PlaySE(hitSE);
         }
     }
 }

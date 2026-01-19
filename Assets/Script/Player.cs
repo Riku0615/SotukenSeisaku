@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
     float MoveSpeed = 200.0f;
 
     [SerializeField]
-    AudioClip AttackSE, GuardSE;
+    AudioSource walkAudioSource;
 
     [SerializeField]
-    AudioSource walkAudioSource;
+    public AudioClip GuardSE;
 
     Rigidbody m_rigidBody;
     Animator m_playerAnimator;
@@ -63,8 +63,6 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButton(1)||Input.GetKey(KeyCode.JoystickButton5))//右クリックでガード
         {
             isGuard = true;
-            //効果音
-            GameManager.PlaySE(GuardSE);
         }
         else
         {
@@ -178,7 +176,6 @@ public class Player : MonoBehaviour
     {
        //当たり判定を有効にする
        SwordCollider.enabled = true;
-       GameManager.PlaySE(AttackSE);
        //デバッグ
        Debug.Log("攻撃開始");
     }

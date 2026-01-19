@@ -1281,6 +1281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   hitEffect: {fileID: 1149167026}
+  hitSE: {fileID: 8300000, guid: 00a32f59110c71442a8ce3df97a41ce9, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &26779792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5632,6 +5634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   hitEffect: {fileID: 379332726}
+  hitSE: {fileID: 8300000, guid: 00a32f59110c71442a8ce3df97a41ce9, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &221372177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12334,9 +12338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 200
-  AttackSE: {fileID: 8300000, guid: 3b0a49e9e4ebb2d43bbd0b10a1a6dc78, type: 3}
-  GuardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
   walkAudioSource: {fileID: 1974336031}
+  GuardSE: {fileID: 0}
   SwordCollider: {fileID: 1974336022}
   swordAttack: {fileID: 1974336023}
   isGuard: 0
@@ -15576,6 +15579,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 740454945}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &714785395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17684,6 +17689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 75867829}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &817336504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7295430320882953680, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}
@@ -20294,6 +20301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 880074674}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &946456879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26041,6 +26050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   hitEffect: {fileID: 469030563}
+  hitSE: {fileID: 8300000, guid: 50fd695771e060447ab2e856ff7ffb24, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &1308846973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2457428351763219266, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
@@ -26401,6 +26412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 7
   hitEffect: {fileID: 1687965901}
+  hitSE: {fileID: 8300000, guid: db61e5d4380f39f40a9911160e2f08f7, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &1318295033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27379,6 +27392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 7
   hitEffect: {fileID: 967858456}
+  hitSE: {fileID: 8300000, guid: db61e5d4380f39f40a9911160e2f08f7, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &1371752073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27959,6 +27974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   hitEffect: {fileID: 469685306}
+  hitSE: {fileID: 8300000, guid: 00a32f59110c71442a8ce3df97a41ce9, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &1397447054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2385331502002645869, guid: 88716498407968c4abc511b0e063fb77, type: 3}
@@ -32084,6 +32101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 1896530954}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &1614434368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32926,6 +32945,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 413546590}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &1652042729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7295430320882953680, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}
@@ -33493,6 +33514,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   hitEffect: {fileID: 869154829}
+  hitSE: {fileID: 8300000, guid: 50fd695771e060447ab2e856ff7ffb24, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &1698040209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2466602268125861937, guid: cfdaf9009eaf6284bb2e89504bc24020, type: 3}
@@ -34439,6 +34462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   hitEffect: {fileID: 79487420}
+  hitSE: {fileID: 8300000, guid: 00a32f59110c71442a8ce3df97a41ce9, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &1744399994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36819,6 +36844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 7
   hitEffect: {fileID: 353628512}
+  hitSE: {fileID: 8300000, guid: db61e5d4380f39f40a9911160e2f08f7, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &1875640235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39242,6 +39269,7 @@ MonoBehaviour:
   attackType: 0
   attack1HitEffect: {fileID: 650033843}
   attack2HitEffect: {fileID: 1913291517}
+  hitSE: {fileID: 8300000, guid: 3b0a49e9e4ebb2d43bbd0b10a1a6dc78, type: 3}
 --- !u!54 &1974336024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -40252,6 +40280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 817005673}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!114 &2031601716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40456,6 +40486,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   hitEffect: {fileID: 694224685}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &2046806910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7295430320882953680, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}

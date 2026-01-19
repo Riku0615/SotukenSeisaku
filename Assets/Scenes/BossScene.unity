@@ -2950,9 +2950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 200
-  AttackSE: {fileID: 8300000, guid: 3b0a49e9e4ebb2d43bbd0b10a1a6dc78, type: 3}
-  GuardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
   walkAudioSource: {fileID: 559322875}
+  GuardSE: {fileID: 0}
   SwordCollider: {fileID: 559322868}
   swordAttack: {fileID: 559322869}
   isGuard: 0
@@ -2992,6 +2991,7 @@ MonoBehaviour:
   attackType: 0
   attack1HitEffect: {fileID: 131609440}
   attack2HitEffect: {fileID: 1123783123}
+  hitSE: {fileID: 8300000, guid: 3b0a49e9e4ebb2d43bbd0b10a1a6dc78, type: 3}
 --- !u!54 &559322870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11260,6 +11260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   hitEffect: {fileID: 642425837}
+  hitSE: {fileID: 8300000, guid: 16adbe3c751470a4586ef7b4c08cd1f5, type: 3}
+  guardSE: {fileID: 8300000, guid: 6fd18a382e3186e4cae9be7eaa4467c2, type: 3}
 --- !u!4 &1674194312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4528916956684074, guid: 8431058aa84a65044bbe46298ab86574, type: 3}
