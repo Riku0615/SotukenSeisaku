@@ -15,26 +15,35 @@ public class Enemy : MonoBehaviour
     public BoxCollider CapCollider;
     private float lastAttackTime;
 
+    //[SerializeField]
+    //AudioSource walkAudioSource;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         CapCollider.enabled = false;
+        //AudioSourceを自動取得
+        //if (walkAudioSource == null)
+            //walkAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
+        //bool isMoving = false;
+
         if (distance <= detectionRange)
         {
             if(agent.enabled)
             {
                 agent.SetDestination(player.position);
+                //isMoving = true;
             }
             animator.SetBool("Move", true);//移動アニメーション
 
-            if(distance<=attackRange)
+            if(distance <= attackRange)
             {
                 Attack();
                 lastAttackTime = Time.time;

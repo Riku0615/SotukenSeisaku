@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class BossBreathDamage : MonoBehaviour
 {
-    [SerializeField] float damagePerSecond = 8f;
-    bool isBreathing = false;
+    public float damage = 8f;
+    public float damageInterval = 0.5f;
 
-    void OnTriggerStay(Collider other)
+    float lastDamageTime;
+
+    private void OnTriggerStay(Collider other)
     {
-        if (!isBreathing) return;
+        if (!other.CompareTag("Player")) return;
 
-        if (other.CompareTag("Player"))
-        {
-            PlayerHP hp = other.GetComponent<PlayerHP>();
-            if(hp != null)
-            {
-                hp.TakeDamage(damagePerSecond * Time.deltaTime);
-            }
-        }
-    }
+        if (Time.time - lastDamageTime < damageInterval) return;
 
-    public void BreathStart()
-    {
-        isBreathing = true;
-    }
+        lastDamageTime = Time.time;
 
-    public void BreathEnd()
-    {
-        isBreathing = false;
+        //プレイヤーにダメージ
+        other.GetComponent<PlayerHP>().TakeDamage(damage);
     }
 }

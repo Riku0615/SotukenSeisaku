@@ -8,7 +8,7 @@ public class BossAI : MonoBehaviour
     [SerializeField] Transform player;
 
     [Header("Attack Distance")]
-    [SerializeField] float closeAttackDistance = 3f;
+    [SerializeField] float AttackDistance = 3f;
     [SerializeField] float breathAttackDistance = 6f;
 
     [Header("Cooldown")]
@@ -29,9 +29,9 @@ public class BossAI : MonoBehaviour
         float distance =
             Vector3.Distance(transform.position, player.position);
 
-        if (distance <= closeAttackDistance)
+        if (distance <= AttackDistance)
         {
-            StartAttack("CloseAttack");
+            StartAttack("Attack");
         }
         else if (distance <= breathAttackDistance)
         {
