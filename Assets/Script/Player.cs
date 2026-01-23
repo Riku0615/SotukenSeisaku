@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     //初期配置用変数
     Vector3 initPos = new Vector3(0.0f, 0.0f, 85.0f);
 
-    // Start is called before the first frame update
     void Start()
     {
         //クォータニオンを使って初期回転を設定
@@ -57,7 +56,6 @@ public class Player : MonoBehaviour
         transform.position = initPos;
     }
 
-    // Update is called once per frame
     void Update()
     {
         //防御
