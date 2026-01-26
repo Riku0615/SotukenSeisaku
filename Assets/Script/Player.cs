@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     bool m_moveFlag;
     public bool isGuard = false;
+    public bool hasKey;
 
     //UŒ‚’†‚©‚Ç‚¤‚©
     bool isAttacking = false;
