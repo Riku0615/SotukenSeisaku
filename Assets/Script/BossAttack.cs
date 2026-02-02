@@ -13,7 +13,7 @@ public class BossAttack : MonoBehaviour
 
     [Header("Sound")]
     [SerializeField]
-    AudioClip hitSE;    //プレイヤー被弾SE
+    AudioClip hitSE;   //プレイヤー被弾SE
 
     [SerializeField]
     AudioClip guardSE;  //ガード成功SE

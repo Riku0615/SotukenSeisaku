@@ -22,6 +22,9 @@ public class PlayerHP : MonoBehaviour
     public GameObject fadeCanvasPrefab; //フェード用Canvas
     public string nextSceneName;        //遷移先シーン名
 
+    [Header("ダメージ硬直")]
+    public float hitStopTime = 1.5f;//ダメージアニメーションの硬直時間
+
     void Start()
     {
         currentHP = maxHP;
@@ -62,6 +65,7 @@ public class PlayerHP : MonoBehaviour
         {
             //防御してない時だけダメージアニメーション再生
             animator.SetTrigger("Hit");
+            StartCoroutine(HitStop());
         }
         currentHP -= damage;
         if (currentHP < 0) currentHP = 0;
@@ -86,6 +90,27 @@ public class PlayerHP : MonoBehaviour
         // ここで点滅などの無敵演出も可能
         yield return new WaitForSeconds(invincibleDuration);
         isInvincible = false;
+    }
+
+    //操作停止用コルーチン
+    private IEnumerator HitStop()
+    {
+        //操作停止
+        player.canMove = false;
+
+        //物理的にも完全停止したい場合
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if(rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        yield return new WaitForSeconds(hitStopTime);
+
+        //死亡していなければ操作再開
+        if (!isDead)
+            player.canMove = true;
     }
 
     //UI更新

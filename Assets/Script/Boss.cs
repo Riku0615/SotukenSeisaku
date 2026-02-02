@@ -25,6 +25,9 @@ public class Boss : MonoBehaviour
     public GameObject breathPrefab;
     public Transform breathPoint;
 
+    [Header("Breath SE")]
+    public AudioSource breathSE;
+
     bool isAttacking;
 
     void Start()
@@ -33,6 +36,9 @@ public class Boss : MonoBehaviour
         animator = GetComponent<Animator>();
         ToothCollider.enabled = false;
         BreathCollider.enabled = false;
+
+        if (breathSE != null)
+            breathSE.Stop();
     }
 
     void Update()
@@ -150,6 +156,9 @@ public class Boss : MonoBehaviour
             breathPoint.rotation
         );
 
+        if (breathSE != null)
+            breathSE.Play();
+
         currentBreath.transform.SetParent(breathPoint);
         currentBreath.transform.localScale = Vector3.one;
 
@@ -163,6 +172,9 @@ public class Boss : MonoBehaviour
         BreathCollider.enabled = false;
 
         Destroy(currentBreath);
+
+        if (breathSE != null)
+            breathSE.Stop();
 
         isAttacking = false;
         lastAttackTime = Time.time;

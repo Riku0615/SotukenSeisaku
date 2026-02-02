@@ -25,7 +25,9 @@ public class Player : MonoBehaviour
     public Attack swordAttack;
 
     bool m_moveFlag;
+    public bool canMove = true;
     public bool isGuard = false;
+    public int KeyCount = 0;
     public bool hasKey;
 
     //攻撃中かどうか
@@ -59,8 +61,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!canMove) return; //ここで完全停止
         //防御
-        if(Input.GetMouseButton(1)||Input.GetKey(KeyCode.JoystickButton5))//右クリックでガード
+        if (Input.GetMouseButton(1)||Input.GetKey(KeyCode.JoystickButton5))//右クリックでガード
         {
             isGuard = true;
         }
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!canMove) return;//ここで完全停止
         //カメラを考慮した移動
         Vector3 PlayerMove = Vector3.zero;
         Vector3 stickL = Vector3.zero;

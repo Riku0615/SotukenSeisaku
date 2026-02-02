@@ -12,6 +12,9 @@ public class Door : MonoBehaviour
     private bool isOpen = false;
     private Player player;
 
+    [SerializeField]
+    AudioClip openSE;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -30,14 +33,15 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
-       if(canOpen && Input.GetKeyDown(KeyCode.Space))
+       if(canOpen && Input.GetKeyDown(KeyCode.Space)|| Input.GetButtonDown("Submit"))
         {
-            if(player != null && player.hasKey)
+            if (player != null && player.hasKey && !isOpen)
             {
                 isOpen = true;
-                player.hasKey = false;
+                PlayOpenSE();
+                player.KeyCount--;
                 Debug.Log("”à‚ªŠJ‚¢‚½!");
             }
             else
@@ -52,6 +56,14 @@ public class Door : MonoBehaviour
                 door.rotation,
                 Quaternion.Euler(0, 270, 0),
                 Time.deltaTime * openSpeed);
+        }
+    }
+
+    void PlayOpenSE()
+    {
+        if(openSE != null)
+        {
+            GameManager.PlaySE(openSE);
         }
     }
 }

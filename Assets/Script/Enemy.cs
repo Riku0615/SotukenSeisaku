@@ -5,41 +5,32 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;    //追跡するプレイヤー
+    public Transform player;            //追跡するプレイヤー
     public float detectionRange = 10.0f;//プレイヤーを見つける範囲
-    public float attackRange = 2.0f;   //攻撃する距離
-    public float attackCooldown = 2.0f;//攻撃間隔
+    public float attackRange = 2.0f;    //攻撃する距離
+    public float attackCooldown = 2.0f; //攻撃間隔
 
     private NavMeshAgent agent;
     private Animator animator;
     public BoxCollider CapCollider;
     private float lastAttackTime;
 
-    //[SerializeField]
-    //AudioSource walkAudioSource;
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         CapCollider.enabled = false;
-        //AudioSourceを自動取得
-        //if (walkAudioSource == null)
-            //walkAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        //bool isMoving = false;
-
         if (distance <= detectionRange)
         {
             if(agent.enabled)
             {
                 agent.SetDestination(player.position);
-                //isMoving = true;
             }
             animator.SetBool("Move", true);//移動アニメーション
 

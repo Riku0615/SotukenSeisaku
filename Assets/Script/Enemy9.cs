@@ -60,4 +60,15 @@ public class Enemy9 : MonoBehaviour
         //追跡を再開する
         agent.enabled = true;
     }
+
+    void AttackStart()
+    {
+        //デバッグ
+        Debug.Log("攻撃開始");
+    }
+
+    void AttackEnd()
+    {
+        Debug.Log("攻撃終了");
+    }
 }

@@ -29,7 +29,7 @@ public class Attack : MonoBehaviour
                 break;
 
             case AttackType.Attack2:
-                damage = Random.Range(1f, 5f);
+                damage = Random.Range(3f, 7f);
                 break;
         }
 
