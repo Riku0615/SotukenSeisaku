@@ -36659,6 +36659,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sword_wood
       objectReference: {fileID: 0}
+    - target: {fileID: 7020839239403543909, guid: a8cc610235c43164cb7d9665673d0322, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8445189446606662102, guid: 27f19f244afa43c43b7c5bff88b185bb, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

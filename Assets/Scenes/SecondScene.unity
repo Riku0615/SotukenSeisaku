@@ -39636,7 +39636,7 @@ MonoBehaviour:
   player: {fileID: 550559543}
   fadeCanvasPrefab: {fileID: 8969901068818607602, guid: a26c943d645cb4c47ab50e98dab1ce6c, type: 3}
   nextSceneName: GameOver
-  hitStopTime: 1.5
+  hitStopTime: 1
 --- !u!82 &1974336031
 AudioSource:
   m_ObjectHideFlags: 0
