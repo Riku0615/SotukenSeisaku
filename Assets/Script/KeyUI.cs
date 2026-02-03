@@ -14,6 +14,6 @@ public class KeyUI : MonoBehaviour
     {
         hintText.text = 
             "”à‚ðŠJ‚­•û–@\n" +
-            "Œ®‚ðŽæ“¾:" + player.KeyCount + "/" + needKeyCount;
+            "Œ®‚ðŽæ“¾: " + player.KeyCount + "/" + needKeyCount;
     }
 }

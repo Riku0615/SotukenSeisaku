@@ -8820,8 +8820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
-  attackRange: 10
+  detectionRange: 30
+  attackRange: 20
   attackCooldown: 10
   HandColliderL: {fileID: 1502768213}
   HandColliderR: {fileID: 1300031106}
@@ -9305,7 +9305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 308417051}
 --- !u!195 &489426680
@@ -9473,7 +9473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 374299438}
 --- !u!195 &497663426
@@ -10216,7 +10216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 79787481}
 --- !u!195 &547887331
@@ -19245,8 +19245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 30
-  attackRange: 20
-  attackCooldown: 10
+  attackRange: 15
+  attackCooldown: 60
   AxeCollider: {fileID: 223072880}
 --- !u!195 &1003265044
 NavMeshAgent:
@@ -21623,7 +21623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 1546409635}
 --- !u!195 &1111875778
@@ -25630,7 +25630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364936370289906279, guid: 74c549d1b06b6b140a1fd9536eea637f, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7364936370289906279, guid: 74c549d1b06b6b140a1fd9536eea637f, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -26405,7 +26405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7364936370289906279, guid: 74c549d1b06b6b140a1fd9536eea637f, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 200
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7364936370289906279, guid: 74c549d1b06b6b140a1fd9536eea637f, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -36337,6 +36337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc1b414f4e57ce44a9934fdb2829869f, type: 2}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalScale.x
       value: 25
@@ -38740,7 +38744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 931313571}
 --- !u!195 &1778460521
@@ -40285,9 +40289,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
-  attackRange: 10
-  attackCooldown: 10
+  detectionRange: 30
+  attackRange: 15
+  attackCooldown: 60
   AxeCollider: {fileID: 325254594}
 --- !u!195 &1864210554
 NavMeshAgent:

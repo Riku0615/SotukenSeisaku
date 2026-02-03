@@ -8686,6 +8686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc1b414f4e57ce44a9934fdb2829869f, type: 2}
     - target: {fileID: 3705028537381535112, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_LocalScale.x
       value: 25
@@ -11740,7 +11744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1974336025}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 23696786}
 --- !u!195 &508806819
@@ -26963,7 +26967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1974336025}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 1318295030}
 --- !u!65 &1318295030
@@ -31675,7 +31679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1974336025}
   detectionRange: 20
-  attackRange: 10
+  attackRange: 20
   attackCooldown: 10
   SpearCollider: {fileID: 1371625039}
 --- !u!195 &1570642542
@@ -37637,8 +37641,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1974336025}
-  detectionRange: 20
-  attackRange: 10
+  detectionRange: 50
+  attackRange: 20
   attackCooldown: 10
   HandColliderL: {fileID: 1308846969}
   HandColliderR: {fileID: 1698040206}
