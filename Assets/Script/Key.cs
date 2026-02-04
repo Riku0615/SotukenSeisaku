@@ -30,7 +30,7 @@ public class Key : MonoBehaviour
 
     private void Update()
     {
-        if(canGet && Input.GetKeyDown(KeyCode.Space))
+        if(canGet && Input.GetKeyDown(KeyCode.Space)|| Input.GetButtonDown("Submit"))
         {
             player.KeyCount++;
 

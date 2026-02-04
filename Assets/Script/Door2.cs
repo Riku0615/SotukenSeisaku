@@ -32,7 +32,7 @@ public class Door2 : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
         if (canOpen && Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Submit"))
         {

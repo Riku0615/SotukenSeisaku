@@ -1129,6 +1129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -1241,7 +1245,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 26779789}
 --- !u!195 &26779786
 NavMeshAgent:
@@ -4661,6 +4665,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -5772,7 +5780,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 221372174}
 --- !u!195 &221372172
 NavMeshAgent:
@@ -8759,6 +8767,10 @@ PrefabInstance:
     - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11819,7 +11831,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 20
-  attackCooldown: 10
+  attackCooldown: 40
   SpearCollider: {fileID: 23696786}
 --- !u!195 &508806819
 NavMeshAgent:
@@ -15943,6 +15955,10 @@ PrefabInstance:
     - target: {fileID: 2219292830553907877, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219292830553907901, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
+      propertyPath: m_Name
+      value: LowerTeethCTRL(3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20707,6 +20723,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2219292830553907901, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
+      propertyPath: m_Name
+      value: LowerTeethCTRL(1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -21695,7 +21715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2642311626253688300, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2642311626253688301, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
       propertyPath: m_Convex
@@ -21808,6 +21828,10 @@ PrefabInstance:
     - target: {fileID: 6537493377709287581, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742957590069641875, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}
+      propertyPath: m_Name
+      value: head(1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26183,7 +26207,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 1397447051}
 --- !u!195 &1270960269
 NavMeshAgent:
@@ -27042,7 +27066,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 20
-  attackCooldown: 10
+  attackCooldown: 40
   SpearCollider: {fileID: 1318295030}
 --- !u!65 &1318295030
 BoxCollider:
@@ -31085,6 +31109,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8742957590069641875, guid: 62e7504d08c54bf42b3a8fa592812add, type: 3}
+      propertyPath: m_Name
+      value: head(2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -31754,7 +31782,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 20
-  attackCooldown: 10
+  attackCooldown: 40
   SpearCollider: {fileID: 1371625039}
 --- !u!195 &1570642542
 NavMeshAgent:
@@ -32428,6 +32456,10 @@ PrefabInstance:
     - target: {fileID: 2219292830553907877, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219292830553907901, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
+      propertyPath: m_Name
+      value: LowerTeethCTRL(2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34581,6 +34613,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -34693,7 +34729,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 1744399991}
 --- !u!195 &1744399988
 NavMeshAgent:
@@ -37394,6 +37430,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
+      propertyPath: m_Name
+      value: Spear(1)
+      objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
@@ -37643,7 +37683,7 @@ MonoBehaviour:
   player: {fileID: 1974336025}
   detectionRange: 50
   attackRange: 20
-  attackCooldown: 10
+  attackCooldown: 100
   HandColliderL: {fileID: 1308846969}
   HandColliderR: {fileID: 1698040206}
 --- !u!195 &1900616899
@@ -39507,6 +39547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 33392871323508890, guid: c20397bf1592dc040b827e8716b0bd41, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 9d34b073abce58249a1f664619a13aaa, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -42644,6 +42688,10 @@ PrefabInstance:
     - target: {fileID: 1812659917213882, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
+      propertyPath: m_Name
+      value: Spear(2)
       objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x

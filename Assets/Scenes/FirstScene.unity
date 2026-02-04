@@ -3982,6 +3982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(3)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -4117,7 +4121,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 920730663}
 --- !u!195 &253130559
 NavMeshAgent:
@@ -8084,6 +8088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -22.4578
       objectReference: {fileID: 0}
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(4)
+      objectReference: {fileID: 0}
     - target: {fileID: 605265790503741232, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 43.336052
@@ -8435,7 +8443,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 821218324}
 --- !u!195 &523064856
 NavMeshAgent:
@@ -8807,7 +8815,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 30
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 50
   SwordCollider: {fileID: 1556459644}
 --- !u!195 &539275352
 NavMeshAgent:
@@ -11843,7 +11851,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 30
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 50
   SwordCollider: {fileID: 923891506}
 --- !u!195 &760768751
 NavMeshAgent:
@@ -15214,6 +15222,14 @@ PrefabInstance:
     - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Name
       value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374289202576707483, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2093443782267337543, guid: 78df1db2fbc8ec64f949fac0c05bf693, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19522,6 +19538,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -19657,7 +19677,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 493436211}
 --- !u!195 &1301291387
 NavMeshAgent:
@@ -20542,7 +20562,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 30
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 50
   SwordCollider: {fileID: 1198092520}
 --- !u!195 &1377698677
 NavMeshAgent:
@@ -23901,7 +23921,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 30
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 50
   SwordCollider: {fileID: 775319889}
 --- !u!195 &1512086380
 NavMeshAgent:
@@ -24962,6 +24982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(5)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -25097,7 +25121,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 1512971808}
 --- !u!195 &1567367094
 NavMeshAgent:
@@ -26517,7 +26541,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 43212783}
 --- !u!4 &1615671066 stripped
 Transform:
@@ -31047,6 +31071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427512741314245562, guid: 88716498407968c4abc511b0e063fb77, type: 3}
+      propertyPath: m_Name
+      value: cap_root(2)
+      objectReference: {fileID: 0}
     - target: {fileID: 3760818565891861144, guid: 88716498407968c4abc511b0e063fb77, type: 3}
       propertyPath: m_LocalScale.x
       value: 8
@@ -31182,7 +31210,7 @@ MonoBehaviour:
   player: {fileID: 1848200167}
   detectionRange: 20
   attackRange: 10
-  attackCooldown: 10
+  attackCooldown: 30
   CapCollider: {fileID: 1077289895}
 --- !u!195 &1882988899
 NavMeshAgent:
@@ -34761,7 +34789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2642311626253688300, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2642311626253688301, guid: ba93fc15ee14dbf45b36696cb946115f, type: 3}
       propertyPath: m_Convex
