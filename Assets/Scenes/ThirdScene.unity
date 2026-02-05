@@ -1216,7 +1216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369535597007869698, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
-      value: MiniAxe(3)
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
@@ -2338,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
-      value: BigAxe
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2580,7 +2580,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369535597007869698, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
-      value: MiniAxe(2)
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
@@ -6831,7 +6831,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369535597007869698, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
-      value: MiniAxe
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
@@ -10529,7 +10529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
-      value: Axe(3)
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17325,7 +17325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
-      value: Axe(2)
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17817,7 +17817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
-      value: Axe(1)
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18603,7 +18603,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369535597007869698, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
-      value: MiniAxe(1)
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
@@ -28505,7 +28505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 842522071, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_Name
-      value: BigAxe(1)
+      value: Axe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

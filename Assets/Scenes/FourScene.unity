@@ -2227,7 +2227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_Name
-      value: Spear(2)
+      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x
@@ -3010,7 +3010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219292830553907901, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
       propertyPath: m_Name
-      value: LowerTeethCTRL(1)
+      value: LowerTeethCTRL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3283,7 +3283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_Name
-      value: Spear(4)
+      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x
@@ -6508,7 +6508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9164578320920074573, guid: 75f057b43e0a449dae5f6549f5107474, type: 3}
       propertyPath: m_Name
-      value: Head(1)
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9353,7 +9353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
+  detectionRange: 50
   attackRange: 20
   attackCooldown: 40
   SpearCollider: {fileID: 308417051}
@@ -9521,7 +9521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
+  detectionRange: 50
   attackRange: 20
   attackCooldown: 40
   SpearCollider: {fileID: 374299438}
@@ -10264,7 +10264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
+  detectionRange: 50
   attackRange: 20
   attackCooldown: 40
   SpearCollider: {fileID: 79787481}
@@ -12285,7 +12285,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369535597007869698, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
-      value: Axe(1)
+      value: Axe
       objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
@@ -13193,7 +13193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_Name
-      value: Spear(1)
+      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x
@@ -21859,7 +21859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
+  detectionRange: 50
   attackRange: 20
   attackCooldown: 40
   SpearCollider: {fileID: 1546409635}
@@ -38187,7 +38187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2219292830553907901, guid: 6a4317fc729846d79f69cda980e03f9d, type: 3}
       propertyPath: m_Name
-      value: LowerTeethCTRL(2)
+      value: LowerTeethCTRL
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39061,7 +39061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1867339966}
-  detectionRange: 20
+  detectionRange: 50
   attackRange: 20
   attackCooldown: 40
   SpearCollider: {fileID: 931313571}
@@ -39467,7 +39467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9164578320920074573, guid: 75f057b43e0a449dae5f6549f5107474, type: 3}
       propertyPath: m_Name
-      value: Head(2)
+      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44785,7 +44785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1849239188663008, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_Name
-      value: Spear(3)
+      value: Spear
       objectReference: {fileID: 0}
     - target: {fileID: 4718552058532164, guid: 705458a9eac3ae740932e6aa33f3ca89, type: 3}
       propertyPath: m_LocalScale.x
