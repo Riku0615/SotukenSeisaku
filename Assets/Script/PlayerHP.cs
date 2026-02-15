@@ -25,11 +25,17 @@ public class PlayerHP : MonoBehaviour
     [Header("ダメージ硬直")]
     public float hitStopTime = 1.5f;//ダメージアニメーションの硬直時間
 
+    [Header("点滅設定")]
+    public float blinkInterval = 0.1f;//点滅間隔
+    private Renderer[] renderers;
+
     void Start()
     {
         currentHP = maxHP;
 
         animator = GetComponent<Animator>();
+
+        renderers = GetComponentsInChildren<Renderer>();
 
         //スライダーの初期設定
         if (hpSlider != null)
@@ -78,8 +84,16 @@ public class PlayerHP : MonoBehaviour
         }
         else
         {
-            //ダメージ後無敵時間スタート
-            StartCoroutine(InvincibleTime());
+            if(player.isGuard)
+            {
+                //ガード中は無敵だけ付与(点滅なし)
+                StartCoroutine(InvincibleOnly());
+            }
+            else
+            {
+                //通常ヒットは点滅付き無敵
+                StartCoroutine(InvincibleTime());
+            }
         }
     }
 
@@ -87,8 +101,32 @@ public class PlayerHP : MonoBehaviour
     private IEnumerator InvincibleTime()
     {
         isInvincible = true;
-        // ここで点滅などの無敵演出も可能
+
+        float timer = 0f;
+
+        while(timer < invincibleDuration)
+        {
+            SetRenderersEnabled(false);
+            yield return new WaitForSeconds(blinkInterval);
+
+            SetRenderersEnabled(true);
+            yield return new WaitForSeconds(blinkInterval);
+
+            timer += blinkInterval * 2;
+        }
+
+        //最後は必ず表示状態に戻す
+        SetRenderersEnabled(true);
+
+        isInvincible = false;
+    }
+
+    private IEnumerator InvincibleOnly()
+    {
+        isInvincible = true;
+
         yield return new WaitForSeconds(invincibleDuration);
+
         isInvincible = false;
     }
 
@@ -111,6 +149,14 @@ public class PlayerHP : MonoBehaviour
         //死亡していなければ操作再開
         if (!isDead)
             player.canMove = true;
+    }
+    
+    private void SetRenderersEnabled(bool enabled)
+    {
+        foreach(Renderer r in renderers)
+        {
+            r.enabled = enabled;
+        }
     }
 
     //UI更新
